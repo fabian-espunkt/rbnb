@@ -1,19 +1,23 @@
 class AlpacasController < ApplicationController
   def index
-    @alpacas = Alpaca.all
+    # @alpacas = Alpaca.all
+    @alpacas = policy_scope(Alpaca)
   end
 
   def show
     @alpaca = Alpaca.find(params[:id])
+    authorize @alpaca
   end
 
   def new
     @alpaca = Alpaca.new
+    authorize @alpaca
   end
 
   def create
     @alpaca = Alpaca.new(alpaca_params)
     @alpaca.user = current_user
+    authorize @alpaca
     if @alpaca.save
       redirect_to alpaca_path(@alpaca)
     else
@@ -23,16 +27,19 @@ class AlpacasController < ApplicationController
 
   def edit
     @alpaca = Alpaca.find(params[:id])
+    authorize @alpaca
   end
 
   def update
     @alpaca = Alpaca.find(params[:id])
+    authorize @alpaca
     @alpaca.update(alpaca_params)
     redirect_to @alpaca
   end
 
   def destroy
     @alpaca = Alpaca.find(params[:id])
+    authorize @alpaca
     @alpaca.destroy
     redirect_to alpacas_path
   end
