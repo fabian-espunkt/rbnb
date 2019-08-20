@@ -1,2 +1,10 @@
 
-<h2>Dahboard</h2>
+<h2>Dashboard</h2>
+
+<h3>Here's your bookings:</h3>
+
+<% @booking.each do |r| %>
+  <li><%= r.alpaca.name %></li>
+<% end %>
+
+<p><%= link_to "Book another alpaca", alpacas_path %></p>
