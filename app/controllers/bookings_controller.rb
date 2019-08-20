@@ -10,8 +10,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.alpaca = @alpaca
 
-    # raise
-    # review_id = 1
     if @booking.save
       redirect_to dashboard_path
     else
