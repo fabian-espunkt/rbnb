@@ -1,2 +1,45 @@
 <h1>Alpacas#edit</h1>
-<p>Find me in app/views/alpacas/edit.html.erb</p>
+<p>Find me in app/views/alpacas/edit.html.erb</p
+
+<h1> Edit the alpaca</h1>
+
+<%= simple_form_for(@alpaca) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <div>
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: 'Liliput' %>
+          </div>
+          <div>
+          <%= f.label :age %>
+          <%= f.text_field :age, placeholder: "4" %>
+          </div>
+          <div>
+          <%= f.label :address %>
+          <%= f.text_field :address, placeholder: "123 Santa Claus Avenue, 18494 Finnland" %>
+          </div>
+          <div>
+          <%= f.label :color %>
+          <%= f.text_field :color, placeholder: "gold" %>
+          </div>
+          <div>
+          <%= f.label :craziness_level %>
+          <%= f.text_field :craziness_level, placeholder: "5" %>
+          </div>
+          <div>
+          <%= f.label :price %>
+          <%= f.text_field :price, placeholder: "25€" %>
+          </div>
+          <div>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          </div>
+
+        </div>
+
+        <div class="form-actions" class="btn btn-primary">
+          <%= f.submit "Update alpaca" %>
+        <% end %>
+        </div>
