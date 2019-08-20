@@ -4,9 +4,9 @@
 <h1>Alpacas you can choose for rent</h1>
 <ul>
   <% @alpacas.each do |r| %>
-  <li><%= link_to r.name, alpaca_path(r) %></li>
-
+  <li><%= link_to r.name, alpaca_path(r) %> | <%= link_to "Show", alpaca_path(r) %> | <%= link_to "Edit", edit_alpaca_path(r) %>| <%= link_to "Delete", alpacas_path(r), method: :delete %></li>
   <% end %>
 </ul>
 
 <%= link_to "➕ Create new", new_alpaca_path(@alpaca) %>
+
