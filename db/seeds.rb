@@ -6,7 +6,7 @@ User.destroy_all
 puts "#{User.count} user records and #{Alpaca.count} alpacas have irreversibly been deleted from the database!"
 puts 'Seeding initiated. Populating the database with new test users ...'
 
-10.times do |user|
+4.times do |user|
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name ,
@@ -18,7 +18,7 @@ end
 puts "Successful seeding of test users. Now, only alpacas are missing."
 puts "Seeding initiated. Populating the database with new alpacas ..."
 
-10.times do |alpaca|
+4.times do |alpaca|
   alpaca = Alpaca.new(
       {
         name: Faker::Name.first_name,
