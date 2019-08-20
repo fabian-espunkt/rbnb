@@ -1,17 +1,24 @@
-<h1>Create a new review!</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<h1>Create a new review</h1>
 
 
-<%= form_for(@review) do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="container">
+  <%= simple_form_for(@review) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div>
-    <%= f.label :details %>
-    <%= f.text_field :details %>
-  </div>
+        <div class="form-inputs">
+          <div>
+          <%= f.label :content %>
+          <%= f.text_field :content, placeholder: 'Please enter at least 4000 characters' %>
+          </div>
+          <div>
+          <%= f.label :stars %>
+          <%= f.text_field :stars, placeholder: "4" %>
+          </div>
+        </div>
+        <div class="form-actions" class="btn btn-primary">
+          <%= f.submit "Create review for this alpaca" %>
+        </div>
 
-  <%= f.submit %>
-<% end %>
+    </div>
+  <% end %>
