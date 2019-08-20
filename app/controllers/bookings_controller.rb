@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @alpaca = Alpaca.find(params[:alpaca_id])
     @booking.user = current_user
     @booking.alpaca = @alpaca
+
     if @booking.save
       redirect_to dashboard_path
     else
