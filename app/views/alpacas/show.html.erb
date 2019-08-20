@@ -30,4 +30,4 @@
     <%= cl_image_tag(@alpaca.photo, width: 400, height: 300, crop: :fill) %>
   <% end %>
 
-<p><%= link_to "⬅ Go Back to overview", alpacas_path %> |  <%= link_to "Book Me", new_alpaca_booking_path(@alpaca) %> </p>
+<p><%= link_to "⬅ Go Back to overview", alpacas_path %> | <%= link_to "Edit", edit_alpaca_path(@alpaca) %> | <%= link_to "Book Me", new_alpaca_booking_path(@alpaca) %> </p>
