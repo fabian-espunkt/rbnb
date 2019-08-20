@@ -13,8 +13,9 @@ class AlpacasController < ApplicationController
 
   def create
     @alpaca = Alpaca.new(alpaca_params)
+    @alpaca.user = current_user
     if @alpaca.save
-      redirect_to alpacas_path(@alpaca)
+      redirect_to alpaca_path(@alpaca)
     else
       render :new
     end
@@ -39,6 +40,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :age, :address, :color, :craziness_level, :price, :user_id)
+    params.require(:alpaca).permit(:name, :age, :address, :color, :craziness_level, :price, :photo)
   end
 end

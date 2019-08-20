@@ -1,2 +1,33 @@
 <h1>Alpacas#show</h1>
 <p>Find me in app/views/alpacas/show.html.erb</p>
+
+<div class="container">
+  <h1><%= @alpaca.name %></h1>
+  <table class="table table-striped table-borderless table-hover">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col"><strong>Name</strong></th>
+              <th scope="col"><strong>Age</strong></th>
+              <th scope="col"><strong>Address</strong></th>
+              <th scope="col"><strong>Color</strong></th>
+              <th scope="col"><strong>Craziness Level</strong></th>
+              <th scope="col"><strong>Price</strong></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><%= @alpaca.name %></td>
+              <td><%= @alpaca.age %></td>
+              <td><%= @alpaca.address %></td>
+              <td><%= @alpaca.color %></td>
+              <td><%= @alpaca.craziness_level %></td>
+              <td><%= @alpaca.price %></td>
+          </tr>
+      </tbody>
+  </table>
+
+ <% if @alpaca.photo.present? %>
+    <%= cl_image_tag(@alpaca.photo, width: 400, height: 300, crop: :fill) %>
+  <% end %>
+
+<p><%= link_to "⬅ Go Back to overview", alpacas_path %> |  <%= link_to "Book Me", new_alpaca_booking_path(@alpaca) %> </p>
