@@ -1,16 +1,63 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
-    <h1 style="color: white" >Change your life, rent an alpaca today</h1>
+    <h3 style="color: white">Change your life, rent an alpaca today</h3>
 
     <a class="btn btn-light my-3" href="#">Search</a>
   </div>
 </div>
 
-<p>Landing page - app/views/pages/home.html.erb</p>
-
-<h1> Change your life, rent an alpaca today</h1>
-
-
 <%= link_to "Create an account", new_user_registration_path, class: "btn btn-primary"  %>
 <%= link_to "Go through alpacas", alpacas_path, class: "btn btn-primary" %>
+
+<!-- Show row of alpacas -->
+<div class="container">
+    <h1 class="text-center">How it works</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates velit alias inventore quibusdam eaque cum eveniet architecto nemo aliquam suscipit, molestias modi quisquam tempore obcaecati magni, aut soluta ratione quam.</p>
+
+    <div class="cards">
+    <% @alpacas.each do |r| %>
+          <div class="row col-12 col-xl-3">
+            <div class="card">
+              <img src="https://c8.alamy.com/comp/E6D9P3/white-head-of-alpaca-isle-of-wight-uk-in-profile-E6D9P3.jpg" alt="">
+              <h4><%= r.name  %></h4>
+              <p>First applly balbalbal</p>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+</div>
+
+<!-- Alpacas for relaxation -->
+
+<div class="card-product m-3">
+  <img src="https://i.pinimg.com/originals/77/40/40/7740408f1f7a98b6ab401084b1d653e4.jpg" />
+  <div class="card-product-infos">
+    <h2>Alpacas for relaxation</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima obcaecati reiciendis fugit nostrum, repudiandae quis suscipit, quisquam ipsa nam pariatur doloribus, dolorum rerum unde saepe. Sed quidem et officiis aliquam!</p>
+  </div>
+</div>
+
+<!-- Ready for your Alpaca experience? -->
+
+<div class="container justify-content-center">
+  <h1>Ready for your Alpaca experience?</h1>
+  <p>Book yours today - hassle free, at your terms.</p>
+    <%= link_to "Get started", alpacas_path, class: "btn btn-primary" %>
+</div>
+
+
+
+<!-- Footer -->
+<div class="footer">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <p>This website was coded with alpaca-<i class="fas fa-heart"></i> at Le Wagon.</p>
+
+    </div>
+  </div>
+
