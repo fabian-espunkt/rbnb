@@ -18,4 +18,10 @@
 
 <p> <%= link_to "➕ Create new!", new_alpaca_path(@alpaca) %> | <%= link_to "Go to My Bookings", dashboard_path %> </p>
 
-
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>

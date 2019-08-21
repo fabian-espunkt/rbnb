@@ -11,7 +11,7 @@ gem 'faker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pundit'
-
+gem 'geocoder'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
@@ -20,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'activemodel'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
