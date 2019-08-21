@@ -1,10 +1,13 @@
 require 'faker'
 
-puts 'Cleaning current database initiated...'
 
+puts 'Cleaning current database initiated...'
 # Booking.destroy_all
 Alpaca.destroy_all
+puts 'Cleaning User'
 User.destroy_all
+
+
 puts "#{User.count} user records and #{Alpaca.count} alpacas have irreversibly been deleted from the database!"
 puts 'Seeding initiated. Populating the database with new test users ...'
 
@@ -16,6 +19,8 @@ puts 'Seeding initiated. Populating the database with new test users ...'
     password: "login123")
   user.save!
 end
+
+puts "Created 4 users"
 
 puts "Successful seeding of test users. Now, only alpacas are missing."
 puts "Seeding initiated. Populating the database with new alpacas ..."
@@ -84,4 +89,5 @@ alpaca4 = Alpaca.new(
 alpaca4.remote_photo_url = url4
 alpaca4.save!
 
+puts "Created 4 alpacas"
 puts "Finished giving birth to #{Alpaca.count} new baby alpacas and creating #{User.count} new user records. Enjoy testing!"
