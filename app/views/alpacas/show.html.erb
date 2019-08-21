@@ -1,36 +1,94 @@
-<h1>Alpacas#show</h1>
-<p>Find me in app/views/alpacas/show.html.erb</p>
+<!-- Alpaca info with picture -->
+<div class="bg-white bg-cover border-top">
+  <div class="container col-8 p-3">
+    <div class="row">
+      <div class="col-8 align-text-center">
+        <br><h3> <%= @alpaca.name %></h3>
+        <p> <%= @alpaca.address %></p>
+      </div>
+      <div class="col-4">
+        <% if @alpaca.photo.present? %>
+        <%= cl_image_tag(@alpaca.photo, class:"img-thumbnail rounded") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container col-8 border-top">
 
-<div class="container">
-  <h1><%= @alpaca.name %></h1>
-  <table class="table table-striped table-borderless table-hover">
-      <thead class="thead-dark">
-          <tr>
-              <th scope="col"><strong>Name</strong></th>
-              <th scope="col"><strong>Age</strong></th>
-              <th scope="col"><strong>Address</strong></th>
-              <th scope="col"><strong>Color</strong></th>
-              <th scope="col"><strong>Craziness Level</strong></th>
-              <th scope="col"><strong>Price</strong></th>
-              <th scope="col"><strong>Description</strong></th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td><%= @alpaca.name %></td>
-              <td><%= @alpaca.age %></td>
-              <td><%= @alpaca.address %></td>
-              <td><%= @alpaca.color %></td>
-              <td><%= @alpaca.craziness_level %></td>
-              <td><%= @alpaca.price %></td>
-              <td><%= @alpaca.description%></td>
-          </tr>
-      </tbody>
-  </table>
+  <!-- Alpaca Overview, Location, Description -->
 
- <% if @alpaca.photo.present? %>
-    <%= cl_image_tag(@alpaca.photo, width: 400, height: 300, crop: :fill) %>
-  <% end %>
+  <div class="container p-3">
+        <div class="row">
+          <div class="col-8">
+
+            <!-- make a card -->
+            <div class="card p-3 mb-3 bg-grey">
+              <p class="text-left"><strong>Overview</strong></p>
+              <p class="text-left"><small>Address: <%= @alpaca.address %></small></p>
+              <p class="text-left"><small>Age: <%= @alpaca.age %></small></p>
+              <p class="text-left"><small>Age: <%= @alpaca.color %></small></p>
+              <p class="text-left"><small>Age: <%= @alpaca.craziness_level %></small></p>
+            </div>
+
+            <!-- make a card -->
+            <div class="card p-3 mb-3">
+              <p class="text-left"><strong>Description</strong></p>
+              <p class="text-left"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione libero quaerat, sint, laborum doloribus blanditiis dignissimos itaque aut amet ea maiores recusandae minima ducimus quasi esse? Eos, doloremque dicta earum.</small></p>
+            </div>
+
+            <!-- map with location of this alpaca -->
+
+          </div>
+
+            <!-- Shopping cart -->
+          <div class="col-4">
+            <div class="bg-white border p-3 sticky-top">
+
+              <div class="d-flex justify-content-between mt-3 border-bottom">
+                <p><strong>€92</strong> per day</p>
+
+              </div>
+
+              <!-- Rental period -->
+              <div class="d-flex justify-content-between mt-3 border-bottom">
+                <p>Rental period</p>
+
+              </div>
+
+              <div class="d-flex justify-content-between mt-3 border-bottom">
+                <p>€92 x 2 days</p>
+                <p>€184</p>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3 border-bottom">
+                <p>€92 x 2 days</p>
+                <p>€184</p>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3 border-bottom">
+                <p>Service fee</p>
+                <p>€22</p>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3">
+                <p><strong>Total</strong></p>
+                <p>€206</p>
+              </div>
+
+              <%= link_to "Book Me", new_alpaca_booking_path(@alpaca), class: "btn btn-primary" %></p>
+
+              <div class="d-flex justify-content-between mt-3 text-center">
+                <p class=""><strong>You won't be charged anything at the moment</strong></p>
+              </div>
+              <div class="d-flex justify-content-between pt-3 border-top text-center">
+                <p class="">Rent price per day includes VAT and all fees</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
 <div
   id="map"
