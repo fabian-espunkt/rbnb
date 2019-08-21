@@ -1,7 +1,7 @@
 require 'faker'
 
 puts 'Cleaning current database initiated...'
-Booking.destroy_all
+# Booking.destroy_all
 Alpaca.destroy_all
 User.destroy_all
 puts "#{User.count} user records and #{Alpaca.count} alpacas have irreversibly been deleted from the database!"
