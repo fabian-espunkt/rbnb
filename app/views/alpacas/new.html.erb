@@ -1,48 +1,46 @@
-<h1>Alpacas#new</h1>
-<p>Find me in app/views/alpacas/new.html.erb</p>
+<div class="container py-5 justify-content-center">
 
-<div class="container">
-
-<h1>Create a new alpaca</h1>
+  <h1 class="text-center">List a new Alpaca</h1>
 
   <%= simple_form_for(@alpaca) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <div class="form-inputs">
-          <div>
-          <%= f.label :name %>
-          <%= f.text_field :name, placeholder: 'Liliput' %>
-          </div>
-          <div>
-          <%= f.label :age %>
-          <%= f.text_field :age, placeholder: "4" %>
-          </div>
-          <div>
-          <%= f.label :address %>
-          <%= f.text_field :address, placeholder: "123 Santa Claus Avenue, 18494 Finnland" %>
-          </div>
-          <div>
-          <%= f.label :color %>
-          <%= f.text_field :color, placeholder: "gold" %>
-          </div>
-          <div>
-          <%= f.label :craziness_level %>
-          <%= f.text_field :craziness_level, placeholder: "5" %>
-          </div>
-          <div>
-          <%= f.label :price %>
-          <%= f.text_field :price, placeholder: "25€" %>
-          </div>
-          <div>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          </div>
-        </div>
-
-        <div class="form-actions" class="btn btn-primary">
-          <%= f.submit "Create alpaca" %>
-        </div>
+  <div class="row justify-content-center">
+    <div class="form-inputs col-xl-6">
+      <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Liliput', class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :age %>
+      <%= f.text_field :age, placeholder: "4", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, placeholder: "123 Santa Claus Avenue, 18494 Finnland", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :color %>
+      <%= f.text_field :color, placeholder: "gold", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :craziness_level, label: 'Craziness level (1 = relaxed, 2 = normal, 3 = crazy)' %>
+      <%= f.text_field :craziness_level, placeholder: "5", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label :price, label: 'Price per day' %>
+      <%= f.text_field :price, placeholder: "25€", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <div class="form-actions" >
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 
     </div>
   <% end %>
