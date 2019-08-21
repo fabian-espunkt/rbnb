@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 100vh;
 }
 
 .banner h1 {
@@ -18,3 +19,43 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.banner h3 {
+  color: white;
+  font-size: 38px;
+}
+
+
+.btn {
+  padding: 11px 15px 11px 13px;
+}
+
+
+.container {
+  margin-right: 157px;
+  margin-top: 57px;
+}
+
+#container-p {
+  width: 520px;
+  margin: 20px auto;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-container img {
+  margin-left: 14px;
+  margin-top: 14px;
+}
+
+.alpaca-experience {
+  padding-left: 245px;
+  background-color: #f1efeb;
+  padding-top: 35px;
+  padding-bottom: 127px;
+  margin-top: 53px;
+}
+

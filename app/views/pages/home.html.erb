@@ -1,53 +1,46 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1539706925993-615886ddcadf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
   <div class="container">
-    <h3 style="color: white">Change your life, rent an alpaca today</h3>
-
-    <a class="btn btn-light my-3" href="#">Search</a>
+    <h3>Change your life. Walk an Alpaca. Today.</h3>
+    <p>Explore a wide collection of alpacas worldwide and walk them.</p>
+    <a class="btn btn-light my-3" href="#">Walk an alpaca</a>
   </div>
 </div>
 
-<%= link_to "Create an account", new_user_registration_path, class: "btn btn-primary"  %>
-<%= link_to "Go through alpacas", alpacas_path, class: "btn btn-primary" %>
+
 
 
 <!-- Show row of alpacas -->
 <div class="container">
-    <h1 class="text-center">How it works</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates velit alias inventore quibusdam eaque cum eveniet architecto nemo aliquam suscipit, molestias modi quisquam tempore obcaecati magni, aut soluta ratione quam.</p>
-
-    <div class="cards">
-    <% @alpacas.each do |r| %>
-          <div class="row col-12 col-xl-3">
-            <div class="card">
-              <img src="https://c8.alamy.com/comp/E6D9P3/white-head-of-alpaca-isle-of-wight-uk-in-profile-E6D9P3.jpg" alt="">
-              <h4><%= r.name  %></h4>
-              <p>First applly balbalbal</p>
+    <h1 class="text-center">Alpacas for every occasion</h1>
+    <p id="container-p">Select from a wide variety of alpacas in your area. Wild ones, tame ones, crazy ones. We've got something for every taste and occasion.</p>
+    <div class="cards-container">
+        <% @alpacas.last(4).each do |r| %>
+          <div class="card" width: 18rem;>
+            <img src="<%= r.photo %>" class="card-img-top" class="d-flex justify-content-between">
+            <div class="card-body">
+              <h5 class="card-title"><%= r.name %></h5>
+          </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Description: <br></strong> <%= r.description %></li>
+              <li class="list-group-item"><strong>Price/day: </strong> <%= r.price %> €</li>
+              <li class="list-group-item"><strong>Craziness Level: </strong><%= r.craziness_level %></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link"><%= link_to "See more", alpaca_path(r) %></a>
             </div>
           </div>
-      <% end %>
-
+        <% end %>
     </div>
 </div>
 
-<!-- Alpacas for relaxation -->
-
-<div class="card-product m-3">
-  <img src="https://i.pinimg.com/originals/77/40/40/7740408f1f7a98b6ab401084b1d653e4.jpg" />
-  <div class="card-product-infos">
-    <h2>Alpacas for relaxation</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima obcaecati reiciendis fugit nostrum, repudiandae quis suscipit, quisquam ipsa nam pariatur doloribus, dolorum rerum unde saepe. Sed quidem et officiis aliquam!</p>
+<!-- Ready for your Alpaca experience? -->
+<div class="alpaca-experience">
+  <div class="container justify-content-center">
+    <h1>Ready for your Alpaca experience?</h1>
+    <p>Book yours today - hassle free, at your terms.</p>
+      <%= link_to "Get started", alpacas_path, class: "btn btn-light" %>
   </div>
 </div>
-
-<!-- Ready for your Alpaca experience? -->
-
-<div class="container justify-content-center">
-  <h1>Ready for your Alpaca experience?</h1>
-  <p>Book yours today - hassle free, at your terms.</p>
-    <%= link_to "Get started", alpacas_path, class: "btn btn-primary" %>
-</div>
-
-
 
 <!-- Footer -->
 <div class="footer">
