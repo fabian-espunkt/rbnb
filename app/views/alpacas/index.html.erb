@@ -1,27 +1,27 @@
-<h3>Alpacas#index</h3>
-<p>Find me in app/views/alpacas/index.html.erb</p>
-
-<h1>Alpacas you can choose for rent</h1>
-<ul>
-  <% @alpacas.each do |r| %>
-  <li><%= link_to r.name, alpaca_path(r) %> |
-      <%= link_to "Show", alpaca_path(r) %> |
-      <% if policy(r).edit? %>
-        <%= link_to "Edit", edit_alpaca_path(r) %>
-      <% end %>|
-      <% if policy(r).destroy? %>
-        <%= link_to "Delete", alpaca_path(r), method: :delete %>
-      <% end %>|
-  </li>
-  <% end %>
-</ul>
-
-<p> <%= link_to "➕ Create new!", new_alpaca_path(@alpaca) %> | <%= link_to "Go to My Bookings", dashboard_path %> </p>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<div class="container">
+  <h1>All alpacas</h1>
+  <h3>Over <%= @alpacas.count %> alpacas available</h3>
+  <ul>
+    <% @alpacas.each do |r| %>
+    <li><%= link_to r.name, alpaca_path(r) %> |
+        <%= link_to "Show", alpaca_path(r) %> |
+        <% if policy(r).edit? %>
+          <%= link_to "Edit", edit_alpaca_path(r) %>
+        <% end %>|
+        <% if policy(r).destroy? %>
+          <%= link_to "Delete", alpaca_path(r), method: :delete %>
+        <% end %>|
+    </li>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  <br>
+</div>
