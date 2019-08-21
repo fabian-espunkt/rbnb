@@ -58,7 +58,7 @@ alpaca1 = Alpaca.new(
       craziness_level: 1,
       price: Faker::Number.within(range: 39..500),
       user: User.first,
-      description: "A beautiful create with a strong urge to pee when touched. Calm behaviour, strong passion."
+      description: "A beautiful creature with a strong urge to pee when touched. Calm behaviour, strong passion."
       }
     )
 alpaca1.remote_photo_url = url1
