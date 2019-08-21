@@ -7,41 +7,36 @@
 </div>
 
 
-
-
-<!-- Show row of alpacas -->
 <div class="container">
-    <h1 class="text-center">Alpacas for every occasion</h1>
-    <p id="container-p">Select from a wide variety of alpacas in your area. Wild ones, tame ones, crazy ones. We've got something for every taste and occasion.</p>
-    <div class="cards-container">
-        <% @alpacas.last(4).each do |r| %>
-          <div class="card" width: 18rem;>
-            <img src="<%= r.photo %>" class="card-img-top" class="d-flex justify-content-between">
-            <div class="card-body">
-              <h5 class="card-title"><%= r.name %></h5>
-          </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Description: <br></strong> <%= r.description %></li>
-              <li class="list-group-item"><strong>Price/day: </strong> <%= r.price %> €</li>
-              <li class="list-group-item"><strong>Craziness Level: </strong><%= r.craziness_level %></li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link"><%= link_to "See more", alpaca_path(r) %></a>
-            </div>
-          </div>
-        <% end %>
-    </div>
+  <h1 class="text-center">Alpacas for every occasion</h1>
+  <p class="text-center">Select from a wide variety of alpacas in your area. Wild ones, tame ones, crazy ones. We've got something for every taste and occasion.</p>
 </div>
 
-
-
-<!-- Ready for your Alpaca experience? -->
-<div class="alpaca-experience-2">
-  <div class="container justify-content-center">
-    <h1>Ready for your Alpaca experience?</h1>
-    <p>Book yours today - hassle free, at your terms.</p>
-      <%= link_to "Get started", alpacas_path, class: "btn btn-light" %>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <% @alpacas.last(3).each do |r| %>
+      <div class="card border mx-3" style="width: 18rem;">
+        <%= cl_image_tag r.photo, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"> <%= r.name %> </h5>
+          <p class="card-text"> <%= r.description %> </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Price/day: €<%= r.price %> </li>
+          <li class="list-group-item">Craziness Level: <%= r.craziness_level %> </li>
+        </ul>
+        <div class="card-body">
+          <%= link_to "See more", alpaca_path(r) %>
+        </div>
+      </div>
+    <% end %>
   </div>
+</div>
+
+<div class="container py-5 text-center">
+  <h1 class="text-center">Ready for your Alpaca experience?</h1>
+  <p class="text-center">Book yours today - hassle free, at your terms.</p>
+  <%= link_to "Search for Alpacas", alpacas_path, class: "btn btn-secondary my-3" %>
 </div>
 
 <!-- Footer -->
@@ -51,7 +46,7 @@
       <a href="#"><i class="fab fa-fw fa-github"></i></a>
       <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
       <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      <p> © 2019 Copyright - Allpacando.com</p>
+      <p> © 2019 Copyright - Alpacando.com</p>
     </div>
 </div>
 
