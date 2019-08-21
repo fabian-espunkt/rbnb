@@ -47,6 +47,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :age, :address, :color, :craziness_level, :price, :photo)
+    params.require(:alpaca).permit(:name, :age, :address, :color, :craziness_level, :price, :photo, :description)
   end
 end
