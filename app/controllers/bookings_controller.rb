@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     authorize @alpaca
     @booking.user = current_user
     @booking.alpaca = @alpaca
-
+    authorize @alpaca
     if @booking.save
       redirect_to dashboard_path
     else
