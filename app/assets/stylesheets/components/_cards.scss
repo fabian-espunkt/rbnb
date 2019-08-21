@@ -2,55 +2,18 @@
   width: 150px;
 }
 
-.card p {
-  opacity: .5;
-}
-
 .card {
-  width: 200px;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 10px;
-  border: 1px solid rgb(230,230,230);
+  background-color: #F4F4F4 !important;
+  border: none;
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
   padding: 16px;
 }
 
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
-
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  #map {
-    display: none;
-  }
-}
-
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  #map {
-    display: block;
-  }
-}
