@@ -23,7 +23,7 @@ puts "Seeding initiated. Populating the database with new alpacas ..."
       {
         name: Faker::Name.first_name,
         age: Faker::Number.within(range: 1..5),
-        address: Faker::Address.city,
+        address: Faker::Address.street_address,
         color: Faker::Color.color_name,
         craziness_level: 3,
         price: Faker::Number.within(range: 3000..8000),
