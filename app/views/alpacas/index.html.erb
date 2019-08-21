@@ -1,19 +1,19 @@
 <div class="container">
-  <h1>All alpacas</h1>
+  <!-- <h1>All alpacas</h1> -->
   <h3>Over <%= @alpacas.count %> alpacas available</h3>
-  <ul>
+
     <% @alpacas.each do |r| %>
-    <li><%= link_to r.name, alpaca_path(r) %> |
-        <%= link_to "Show", alpaca_path(r) %> |
+    <li><%= r.name %> |
+        <%= link_to "🔍 Show", alpaca_path(r) %>
         <% if policy(r).edit? %>
-          <%= link_to "Edit", edit_alpaca_path(r) %>
-        <% end %>|
+          <%= link_to "🔧 Edit", edit_alpaca_path(r) %>
+        <% end %>
         <% if policy(r).destroy? %>
-          <%= link_to "Delete", alpaca_path(r), method: :delete %>
-        <% end %>|
+          <%= link_to "🗑 Delete", alpaca_path(r), method: :delete %>
+        <% end %>
     </li>
     <% end %>
-  </ul>
+
   <br>
   <br>
   <div
