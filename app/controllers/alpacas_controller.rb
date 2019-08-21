@@ -7,7 +7,7 @@ class AlpacasController < ApplicationController
       {
         lat: alpaca.latitude,
         lng: alpaca.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { alpaca: alpaca }),
+        infoWindow: render_to_string(partial: "info_window", locals: { alpaca: alpaca })
       }
     end
   end
@@ -15,6 +15,7 @@ class AlpacasController < ApplicationController
   def show
     @alpaca = Alpaca.find(params[:id])
     authorize @alpaca
+    @marker = @alpaca
 
   end
 
