@@ -26,11 +26,15 @@
       </div>
       <div class="form-group">
       <%= f.label :craziness_level, label: 'Craziness level (1 = relaxed, 2 = normal, 3 = crazy)' %>
-      <%= f.text_field :craziness_level, placeholder: "5", class: "form-control" %>
+      <%= f.text_field :craziness_level, placeholder: "3", class: "form-control" %>
       </div>
       <div class="form-group">
-      <%= f.label :price, label: 'Price per day' %>
-      <%= f.text_field :price, placeholder: "25€", class: "form-control" %>
+      <%= f.label :price, label: 'Price per day (in €)' %>
+      <%= f.text_field :price, placeholder: "25", class: "form-control" %>
+      </div>
+       <div class="form-group">
+      <%= f.label :description, label: 'Describe your alpaca' %>
+      <%= f.text_field :description, placeholder: "Beautiful but sometimes naughty", class: "form-control" %>
       </div>
       <div class="form-group">
       <%= f.input :photo %>
