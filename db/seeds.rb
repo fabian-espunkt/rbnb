@@ -1,9 +1,13 @@
 require 'faker'
 
+
 puts 'Cleaning current database initiated...'
-Booking.destroy_all
+# Booking.destroy_all
 Alpaca.destroy_all
+puts 'Cleaning User'
 User.destroy_all
+
+
 puts "#{User.count} user records and #{Alpaca.count} alpacas have irreversibly been deleted from the database!"
 puts 'Seeding initiated. Populating the database with new test users ...'
 
@@ -16,38 +20,11 @@ puts 'Seeding initiated. Populating the database with new test users ...'
   user.save!
 end
 
+puts "Created 4 users"
+
 puts "Successful seeding of test users. Now, only alpacas are missing."
 puts "Seeding initiated. Populating the database with new alpacas ..."
 
-# 4.times do |alpaca|
-#   descriptions = [
-#     "A beautiful create with a strong urge to pee when touched. Calm behaviour, strong passion.",
-#     "Barks at cats and slightly arrogant attitude towards other alpacas. Solo walk recommended.",
-#     "Very chill, but naughty when touched on the tail. Ocasionally, it spits at people.",
-#     "Has a great sense of humour. Don't feed carrots because it becomes suicidal because of it."
-#   ]
-
-#   pictures = [
-#     "https://jerseyeveningpost.com/resizer/j9A69AuLBrqxVP_zJ_BEgZ4BhBI=/1000x0/filters:quality(100)/arc-anglerfish-arc2-prod-jerseyeveningpost-mna.s3.amazonaws.com/public/Z3U2Z7JVWVEERBYUGIFBGGYHSM.jpg",
-#     "https://www.thatsfarming.com/uploads/news/resizeExact_1200_800/3408-alpaca-1191300-1280.jpg",
-#     "https://www.marylandzoo.org/wp-content/uploads/2017/10/Alpaca2-1024x683.jpg",
-#     "https://jerseyeveningpost.com/resizer/j9A69AuLBrqxVP_zJ_BEgZ4BhBI=/1000x0/filters:quality(100)/arc-anglerfish-arc2-prod-jerseyeveningpost-mna.s3.amazonaws.com/public/Z3U2Z7JVWVEERBYUGIFBGGYHSM.jpg"
-#   ]
-#   alpaca = Alpaca.new(
-#       {
-#         name: Faker::Name.first_name,
-#         age: Faker::Number.within(range: 1..5),
-#         address: Faker::Address.street_address,
-#         color: Faker::Color.color_name,
-#         craziness_level: 3,
-#         price: Faker::Number.within(range: 3000..8000),
-#         user: [User.first, User.second, User.third, User.fourth].sample
-#         description: descriptions.sample
-#         photo: pictures.sample
-#       }
-#     )
-#   alpaca.save!
-# end
 url1 = "https://jerseyeveningpost.com/resizer/j9A69AuLBrqxVP_zJ_BEgZ4BhBI=/1000x0/filters:quality(100)/arc-anglerfish-arc2-prod-jerseyeveningpost-mna.s3.amazonaws.com/public/Z3U2Z7JVWVEERBYUGIFBGGYHSM.jpg"
 alpaca1 = Alpaca.new(
    {
@@ -58,7 +35,7 @@ alpaca1 = Alpaca.new(
       craziness_level: 1,
       price: Faker::Number.within(range: 39..500),
       user: User.first,
-      description: "A beautiful create with a strong urge to pee when touched. Calm behaviour, strong passion."
+      description: "A beautiful creature with a strong urge to pee when touched. Calm behaviour, strong passion."
       }
     )
 alpaca1.remote_photo_url = url1
@@ -96,7 +73,7 @@ alpaca3 = Alpaca.new(
 alpaca3.remote_photo_url = url3
 alpaca3.save!
 
-url4 = "https://jerseyeveningpost.com/resizer/j9A69AuLBrqxVP_zJ_BEgZ4BhBI=/1000x0/filters:quality(100)/arc-anglerfish-arc2-prod-jerseyeveningpost-mna.s3.amazonaws.com/public/Z3U2Z7JVWVEERBYUGIFBGGYHSM.jpg"
+url4 = "https://bloximages.newyork1.vip.townnews.com/coastalview.com/content/tncms/assets/v3/editorial/6/ef/6eff4bfc-91ea-11e9-8d14-33c569d56e66/5d09187036b78.image.jpg"
 alpaca4 = Alpaca.new(
    {
       name: "Steven",
@@ -112,5 +89,5 @@ alpaca4 = Alpaca.new(
 alpaca4.remote_photo_url = url4
 alpaca4.save!
 
-
+puts "Created 4 alpacas"
 puts "Finished giving birth to #{Alpaca.count} new baby alpacas and creating #{User.count} new user records. Enjoy testing!"
