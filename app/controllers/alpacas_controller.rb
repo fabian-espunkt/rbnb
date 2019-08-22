@@ -4,7 +4,7 @@ class AlpacasController < ApplicationController
     if params[:query].present?
       @alpacas = Alpaca.near(params[:query], 10)
       if @alpacas.empty?
-        @message = "hier gibt's nichts"
+        @message = "no alpacas here, search another city"
         policy_scope(@alpacas)
       else
         @markers = @alpacas.map do |alpaca|
