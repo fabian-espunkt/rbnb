@@ -2,7 +2,7 @@ require 'faker'
 
 
 puts 'Cleaning current database initiated...'
-Booking.destroy_all
+# Booking.destroy_all
 Alpaca.destroy_all
 puts 'Cleaning User'
 User.destroy_all
