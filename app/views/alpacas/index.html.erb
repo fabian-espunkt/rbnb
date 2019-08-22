@@ -1,23 +1,26 @@
-<div class="container">
-  <!-- <h1>All alpacas</h1> -->
-  <h3>Over <%= @alpacas.count %> alpacas available</h3>
+<div class="container m-auto justify-content-center">
 
-  <div class="main-container d-flex justify-content-center">
+
+  <h3 class="alpaca-amount"> <strong>Over <%= @alpacas.count %> alpacas available </strong> </h3>
+
+  <div class="main-container d-flex justify-content-between">
       <div class="cards">
         <% @alpacas.each do |r| %>
-          <div>
-            <div class="img">
-              <%= cl_image_tag r.photo %>
-            </div>
-            <div>
-              <%= r.name %> |
-              <%= link_to "Show", alpaca_path(r) %>
+          <div class="alpaca-card d-flex border p-3">
+            <%= cl_image_tag r.photo, class:"img-thumbnail" %>
+            <div class="text-left px-3">
+              <h5>Alpaca name</h5>
+              <h2><strong><%= link_to r.name, alpaca_path(r) %></strong></h2>
+              <p>Craziness level: <%= r.craziness_level %></p>
+              <p>Address: <%= r.address %></p>
               <% if policy(r).edit? %>
-              <%= link_to "Edit", edit_alpaca_path(r) %>
+              <span><%= link_to "Edit", edit_alpaca_path(r) %></span>
               <% end %>
               <% if policy(r).destroy? %>
-              <%= link_to "Delete", alpaca_path(r), method: :delete %>
+              <span><%= link_to "Delete", alpaca_path(r), method: :delete %></span>
               <% end %>
+            </div>
+            <div>
             </div>
           </div>
         <% end %>
@@ -29,4 +32,6 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
   </div>
-</div>
+
+
+
