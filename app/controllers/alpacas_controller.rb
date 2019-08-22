@@ -14,8 +14,8 @@ class AlpacasController < ApplicationController
 
   def show
     @alpaca = Alpaca.find(params[:id])
-    @booking = Booking.new
     authorize @alpaca
+    @booking = Booking.new
     @marker = @alpaca
   end
 

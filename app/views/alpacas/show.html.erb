@@ -3,8 +3,9 @@
   <div class="container col-8 p-3">
     <div class="row">
       <div class="col-8 align-text-center">
-        <br><h3> <%= @alpaca.name %></h3>
+        <br><h2><strong> <%= @alpaca.name %></strong></h2>
         <p> <%= @alpaca.address %></p>
+        <p id="description-2"> <%= @alpaca.description %></p>
       </div>
       <div class="col-4">
         <% if @alpaca.photo.present? %>
@@ -14,21 +15,21 @@
     </div>
   </div>
 </div>
-<div class="container col-8 border-top">
+<div class="container col-8 border-top" id="alignment">
 
   <!-- Alpaca Overview, Location, Description -->
 
-  <div class="container p-3">
+  <div class="container">
         <div class="row">
           <div class="col-8">
 
             <!-- make a card -->
             <div class="card p-3 mb-3 bg-grey">
-              <p class="text-left"><strong>Overview</strong></p>
-              <p class="text-left"><small>Address: <%= @alpaca.address %></small></p>
-              <p class="text-left"><small>Age: <%= @alpaca.age %></small></p>
-              <p class="text-left"><small>Color: <%= @alpaca.color %></small></p>
-              <p class="text-left"><small>Craziness level: <%= @alpaca.craziness_level %></small></p>
+              <p class="text-left" id="overview"><strong>Overview</strong></p>
+              <p class="text-left"><small><strong>Address:</strong><br> <%= @alpaca.address %></small></p>
+              <p class="text-left"><small><strong>Age:</strong><br> <%= @alpaca.age %> years old</small></p>
+              <p class="text-left"><small><strong>Color:</strong> <br> <%= @alpaca.color.capitalize %></small></p>
+              <p class="text-left"><small><strong>Craziness level:</strong><br> <%= @alpaca.craziness_level %> |         1 = relaxed, 2 = normal, 3 = crazy</small></p>
             </div>
 
             <!-- make a card -->
@@ -46,15 +47,18 @@
             <div class="bg-white border p-3 sticky-top">
 
               <div class="d-flex justify-content-between mt-3 border-bottom">
-                <p><strong>€ <span id="price-tag"><%= @alpaca.price %></span></strong> per day</p>
+                <p><strong id="orange-2">€ <span id="price-tag"><%= @alpaca.price %></span></strong> per day</p>
               </div>
 
               <!-- Rental period -->
+              <%= simple_form_for([@alpaca, @booking]) do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
               <div class="d-flex justify-content-between mt-3 border-bottom">
-                <p>Rental period in days</p>
-                <div class="friend2field">
-                  <input name="state" type="number" id="amount-days">
-                </div>
+                <p>Rental Period</p>
+                 <div class="form-inputs">
+                    <span id="amount-days"> <%= f.text_field :days, placeholder: "days", class: "form-control" %> </span>
+                 </div>
               </div>
 
               <div class="d-flex justify-content-between mt-3 border-bottom">
@@ -69,16 +73,12 @@
 
               <div class="d-flex justify-content-between mt-3">
                 <p><strong>Total</strong></p>
-                <p>€<span id="total-total"></span> </p>
-              </div>
 
-              <%= simple_form_for([@alpaca, @booking]) do |f| %>
-                <%= f.error_notification %>
-                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                    <div class="form-inputs">
-                    <div class="form-actions" class="btn btn-primary">
-                      <%= f.submit "Book", class: "btn btn-success mt-1 btn-block" %>
-                    </div>
+                <p>€<span id="total-total"></span> </p>
+
+              </div>
+                <div class="form-actions" class="btn btn-primary">
+                  <%= f.submit "Book", class: "btn btn-warning mt-1 btn-block" %>
                 </div>
               <% end %>
 
