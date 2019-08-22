@@ -1,10 +1,58 @@
+<div class="container" id="special-container">
 
-<h2>Dashboard</h2>
+    <div class="card text-center" id="cds">
 
-<h3>Here's your bookings:</h3>
+      <div class="card-body">
+        <h5 class="welcome-message">Welcome back!</h5>
+        <p class="dash-board-p">Your bookings:</p>
+      </div>
+      <% @booking.each do |r| %>
+      <div class="card-body d-flex justify-content-between" id="inner-card">
+        <div class="alpaca-image">
+        <% if r.alpaca.photo.present? %>
+          <%= cl_image_tag(r.alpaca.photo, class:"img-thumbnail rounded") %>
+        <% end %>
+        </div>
+        <div id="left-align">
+          <p id="alpaca-name"> <%= r.alpaca.name.upcase %></p>
+          <p> <strong>Rental period:</strong> <%= r.days %> days </p>
+          <p> <strong>Pickup Location:</strong> <%= r.alpaca.address %> </p>
+        </div>
+        <div>
+          <p> <strong id="s"><%= link_to "View", alpaca_path(r.alpaca)  %></strong></p>
+          <p id="booking-status"> BOOKED </p>
+          <p> <%= Date.current.day - r.created_at.day + 1 %> days ago</p>
+        </div>
+      </div>
+      <% end %>
+      <div class="card-body">
+        <p class="dash-board-p">Your listed Alpaca(s):</p>
+      </div>
+      <% @alpacas.each do |alpaca| %>
+      <div class="card-body d-flex justify-content-between" id="inner-card">
+        <div class="alpaca-image">
+        <% if alpaca.photo.present? %>
+          <%= cl_image_tag(alpaca.photo, class:"img-thumbnail rounded") %>
+        <% end %>
+        </div>
+      <div id="left-align">
+        <p id="alpaca-name-2"> <%= alpaca.name.upcase %></p>
+        <p> <strong>Rental dates:</strong><br> 12.10.19 – 14.10.19 </p>
+        <p> <strong>Your address:</strong><br> <%= alpaca.address %> </p>
+      </div>
+      <div>
+        <p> <strong id="s"><%= link_to "Edit", edit_alpaca_path(alpaca)  %></strong></p>
+        <p id="requested-status"> REQUESTED </p>
+          <% end %>
+      </div>
+      </div>
+    <p><%= link_to "Book another alpaca", alpacas_path, class: "btn btn-warning mt-2 btn-block" %></p>
+</div>
 
-<% @booking.each do |r| %>
-  <li><%= r.alpaca.name %></li>
-<% end %>
 
-<p><%= link_to "Book another alpaca", alpacas_path %></p>
+
+<!--   <p class="card-text"></p>
+   <a href="" class="btn btn-warning">Show</a>
+
+
+ -->
