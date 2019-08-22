@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: "pages#dashboard"
 
   resources :alpacas do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create]
   end
   resources :bookings, only: [] do
     # resources :reviews, only: [:new, :create]
