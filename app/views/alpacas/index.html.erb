@@ -10,6 +10,7 @@
             <h2><strong><%= link_to r.name, alpaca_path(r) %></strong></h2>
             <p>Craziness level: <%= r.craziness_level %></p>
             <p>Address: <%= r.address %></p>
+            <%= link_to "See more", alpaca_path(r) %>
             <% if policy(r).edit? %>
             <span><%= link_to "Edit", edit_alpaca_path(r) %></span>
             <% end %>
