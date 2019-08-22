@@ -3,14 +3,19 @@ class AlpacasController < ApplicationController
     # @alpacas = Alpaca.all
     if params[:query].present?
       @alpacas = Alpaca.near(params[:query], 10)
-      @markers = @alpacas.map do |alpaca|
-        {
-          lat: alpaca.latitude,
-          lng: alpaca.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { alpaca: alpaca })
-        }
+      if @alpacas.empty?
+        @message = "hier gibt's nichts"
+        policy_scope(@alpacas)
+      else
+        @markers = @alpacas.map do |alpaca|
+          {
+            lat: alpaca.latitude,
+            lng: alpaca.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { alpaca: alpaca })
+          }
+        end
+        policy_scope(@alpacas)
       end
-      policy_scope(@alpacas)
     else
       @alpacas = policy_scope(Alpaca).geocoded
 
