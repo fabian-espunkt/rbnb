@@ -18,12 +18,12 @@
           <p> <strong>Pickup Location:</strong> <%= r.alpaca.address %> </p>
           <div class="d-flex justify-content-start mt-4">
             <p id="s" class="mr-3"><%= link_to "See more", alpaca_path(r.alpaca) %></p>
+
             <p id="s"><%= link_to "Cancel booking", booking_path(r), method: :delete %></p>
           </div>
         </div>
         <div>
           <p id="booking-status"> BOOKED </p>
-          <p> <%= Date.current.day - r.created_at.day + 1 %> days ago</p>
         </div>
       </div>
       <% end %>

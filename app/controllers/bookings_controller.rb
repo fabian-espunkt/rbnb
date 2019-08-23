@@ -21,7 +21,12 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:alpaca_id])
-    @booking.destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.destroy
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 end
