@@ -5,7 +5,7 @@
 
 #orange-2 {
   font-size: 35px;
-  color: #ffa310;
+  color: #F8772B !important;
 }
 
 #overview {
@@ -13,7 +13,6 @@
 }
 
 #alignment {
-  margin-left: 297px;
 }
 
 #description-2 {
@@ -114,4 +113,8 @@
 
 .card-body a {
   color: #F8772B;
+}
+
+.overview-card {
+  line-height: 1.2 !important;
 }
