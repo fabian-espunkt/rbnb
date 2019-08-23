@@ -79,7 +79,7 @@ alpaca3 = Alpaca.new(
    {
       name: "Melanie",
       age: 22,
-      address: "Lützowstraße 51b, 10785 Berlin",
+      address: "Los-Angeles-Platz 30, Hamburg",
       color: "white",
       craziness_level: 3,
       price: 120,
@@ -111,7 +111,7 @@ alpaca5 = Alpaca.new(
    {
       name: "Dimitri",
       age: 14,
-      address: "Neumarkter Str. 28, 81673 München",
+      address: "Neumarkter Str. 28, München",
       color: "glitter",
       craziness_level: 3,
       price: 300,
@@ -121,6 +121,54 @@ alpaca5 = Alpaca.new(
     )
 alpaca5.remote_photo_url = url5
 alpaca5.save!
+
+url6 = "https://static.wixstatic.com/media/016259_96ebc50d89c0431bb16fee403efac680~mv2.jpg"
+alpaca6 = Alpaca.new(
+   {
+      name: "Andy",
+      age: 20,
+      address: "78 Chester Road, SALISBURY, SP65 3NY",
+      color: "glitter",
+      craziness_level: 10,
+      price: 5,
+      user: User.first,
+      description: "Broken but it still brings joy. Likes to observe rivers and lakes."
+      }
+    )
+alpaca6.remote_photo_url = url6
+alpaca6.save!
+
+url7 = "https://atgbcentral.com/data/out/122/5019575-alpaca.jpg"
+alpaca7 = Alpaca.new(
+   {
+      name: "Sarah",
+      age: 20,
+      address: "Via Nolana 45, Carrodano",
+      color: "brown",
+      craziness_level: 5,
+      price: 40,
+      user: User.second,
+      description: "Eats everything so be careful when going out. People might disappear."
+      }
+    )
+alpaca7.remote_photo_url = url7
+alpaca7.save!
+
+url8 = "https://www.brandtely-alpakas.de/files/bilder/Unsere%20Tiere/brandtely-alpaka-25.jpg"
+alpaca8 = Alpaca.new(
+   {
+      name: "Leon",
+      age: 20,
+      address: " 76 rue Lenotre, Rambouillet",
+      color: "brown",
+      craziness_level: 18,
+      price: 98,
+      user: User.third,
+      description: "Will get angry if it doesn't post anything on Instagram for more than 1 hour."
+      }
+    )
+alpaca8.remote_photo_url = url8
+alpaca8.save!
 
 puts "Success! Created #{Alpaca.count} alpacas"
 puts "Finished! Enjoy testing your seeded database."
