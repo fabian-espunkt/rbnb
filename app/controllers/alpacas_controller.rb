@@ -1,4 +1,5 @@
 class AlpacasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     # @alpacas = Alpaca.all
     if params[:query].present?

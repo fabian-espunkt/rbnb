@@ -47,7 +47,7 @@ alpaca1 = Alpaca.new(
    {
       name: "Holger",
       age: 25,
-      address: "Springlane 24, 10722 Berlin",
+      address: "Graefestraße 47-50, 10967 Berlin",
       color: "beige",
       craziness_level: 1,
       price: 299,
@@ -55,7 +55,7 @@ alpaca1 = Alpaca.new(
       description: "A beautiful creature with a strong urge to pee when touched. Calm behaviour, strong passion."
       }
     )
-alpaca1.photo = url1
+alpaca1.remote_photo_url = url1
 alpaca1.save!
 
 url2 = "https://www.thatsfarming.com/uploads/news/resizeExact_1200_800/3408-alpaca-1191300-1280.jpg"
@@ -63,12 +63,12 @@ alpaca2 = Alpaca.new(
    {
       name: "Peter",
       age: 18,
-      address: "Tempelhofer Feld 22, 10785 Berlin",
+      address: "Pariser Platz, 10117 Berlin",
       color: "white",
       craziness_level: 2,
       price: 250,
       user: User.second,
-      description: "Barks at cats and slightly arrogant attitude towards other alpacas. Solo walk recommended."
+      description: "Barks at cats and slightly arrogant attitude towards other alpacas."
       }
     )
 alpaca2.remote_photo_url = url2
@@ -79,7 +79,7 @@ alpaca3 = Alpaca.new(
    {
       name: "Melanie",
       age: 22,
-      address: "Lützowstraße 51b, 10785 Berlin",
+      address: "Los-Angeles-Platz 30, Hamburg",
       color: "white",
       craziness_level: 3,
       price: 120,
@@ -95,7 +95,7 @@ alpaca4 = Alpaca.new(
    {
       name: "Steven",
       age: 14,
-      address: "Am Karlsbad 10, 10785 Berlin",
+      address: "Chausseestraße 41, 10115 Berlin",
       color: "black",
       craziness_level: 2,
       price: 180,
@@ -105,6 +105,70 @@ alpaca4 = Alpaca.new(
     )
 alpaca4.remote_photo_url = url4
 alpaca4.save!
+
+url5 = "https://static.theworks.co.uk/images/5052089242234_Z.jpg"
+alpaca5 = Alpaca.new(
+   {
+      name: "Dimitri",
+      age: 14,
+      address: "Speyerer Str. 23-17, 60327 Frankfurt am Main",
+      color: "glitter",
+      craziness_level: 3,
+      price: 300,
+      user: User.fourth,
+      description: "Loves to be covered in baby oil while twerking and singing a random song."
+      }
+    )
+alpaca5.remote_photo_url = url5
+alpaca5.save!
+
+url6 = "https://static.wixstatic.com/media/016259_96ebc50d89c0431bb16fee403efac680~mv2.jpg"
+alpaca6 = Alpaca.new(
+   {
+      name: "Andy",
+      age: 20,
+      address: "Malta House, 36-38 Piccadilly, Mayfair, London W1J 0DP",
+      color: "glitter",
+      craziness_level: 10,
+      price: 5,
+      user: User.first,
+      description: "Broken but it still brings joy. Likes to observe rivers and lakes."
+      }
+    )
+alpaca6.remote_photo_url = url6
+alpaca6.save!
+
+url7 = "https://atgbcentral.com/data/out/122/5019575-alpaca.jpg"
+alpaca7 = Alpaca.new(
+   {
+      name: "Sarah",
+      age: 20,
+      address: "Via Santa Maria Ausiliatrice, 41, 00181 Roma",
+      color: "brown",
+      craziness_level: 5,
+      price: 40,
+      user: User.second,
+      description: "Eats everything so be careful when going out. People might disappear."
+      }
+    )
+alpaca7.remote_photo_url = url7
+alpaca7.save!
+
+url8 = "https://www.brandtely-alpakas.de/files/bilder/Unsere%20Tiere/brandtely-alpaka-25.jpg"
+alpaca8 = Alpaca.new(
+   {
+      name: "Leon",
+      age: 20,
+      address: " 76 rue Lenotre, Rambouillet",
+      color: "brown",
+      craziness_level: 18,
+      price: 98,
+      user: User.third,
+      description: "Will get angry if it doesn't post anything on Instagram for more than 1 hour."
+      }
+    )
+alpaca8.remote_photo_url = url8
+alpaca8.save!
 
 puts "Success! Created #{Alpaca.count} alpacas"
 puts "Finished! Enjoy testing your seeded database."

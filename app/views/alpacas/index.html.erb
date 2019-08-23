@@ -7,16 +7,19 @@
           <%= cl_image_tag r.photo, class:"img-thumbnail" %>
           <div class="text-left px-3">
             <br>
-            <h2><strong><%= link_to r.name, alpaca_path(r) %></strong></h2>
-            <p>Craziness level: <%= r.craziness_level %></p>
-            <p>Address: <%= r.address %></p>
-            <%= link_to "See more", alpaca_path(r) %>
+            <h2 id="alpaca-name"><strong><%= r.name.upcase %></strong></h2>
+            <p><strong>Craziness level:</strong> <%= r.craziness_level %></p>
+            <p><strong>Address:</strong> <%= r.address %></p>
+            <%= link_to "See more", alpaca_path(r), class: "orange"%>
             <% if policy(r).edit? %>
-            <span><%= link_to "Edit", edit_alpaca_path(r) %></span>
+            <span class="px-2"><%= link_to "Edit", edit_alpaca_path(r), class: "orange" %></span>
             <% end %>
             <% if policy(r).destroy? %>
-            <span><%= link_to "Delete", alpaca_path(r), method: :delete %></span>
+            <span class="px-2"><%= link_to "Delete", alpaca_path(r), method: :delete, class: "orange" %></span>
             <% end %>
+          </div>
+          <div class="pricetag">
+            <p href=""> <strong> €<%= r.price %></strong></p>
           </div>
         </div>
       <% end %>
