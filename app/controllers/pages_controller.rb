@@ -9,4 +9,9 @@ class PagesController < ApplicationController
     @alpacas = current_user.alpacas
     @booking = Booking.where(user_id: current_user.id)
   end
+
+  def destroy
+    @booking = Booking.find(:alpaca_id)
+    @booking.destroy
+  end
 end

@@ -1,50 +1,68 @@
-<div class="container" id="special-container">
+<div class="container justify-content-center" id="special-container">
+
   <div class="card text-center" id="cds">
     <div class="card-body">
-      <h5 class="welcome-message">Welcome back!</h5>
-      <p class="dash-board-p">Your bookings:</p>
+      <h2 class="dash-board-p my-3"><strong>Your bookings</strong></h2>
     </div>
+
     <% @booking.each do |r| %>
-      <div class="card-body d-flex justify-content-between" id="inner-card">
+      <div class="card-body d-flex" id="inner-card">
         <div class="alpaca-image">
-        <% if r.alpaca.photo.present? %>
-          <%= cl_image_tag(r.alpaca.photo, class:"img-thumbnail rounded") %>
-        <% end %>
+          <% if r.alpaca.photo.present? %>
+            <%= cl_image_tag(r.alpaca.photo, class:"img-thumbnail rounded") %>
+          <% end %>
         </div>
         <div id="left-align">
           <p id="alpaca-name"> <%= r.alpaca.name.upcase %></p>
           <p> <strong>Rental period:</strong> <%= r.days %> days </p>
           <p> <strong>Pickup Location:</strong> <%= r.alpaca.address %> </p>
+          <div class="d-flex justify-content-start mt-4">
+            <p id="s" class="mr-3"><%= link_to "See more", alpaca_path(r.alpaca) %></p>
+            <p id="s"><%= link_to "Cancel booking", booking_path(r), method: :delete %></p>
+          </div>
         </div>
         <div>
-          <p> <strong id="s"><%= link_to "View", alpaca_path(r.alpaca)  %></strong></p>
           <p id="booking-status"> BOOKED </p>
           <p> <%= Date.current.day - r.created_at.day + 1 %> days ago</p>
         </div>
       </div>
       <% end %>
-       <div id="container-book">
-          <%= link_to "Book another alpaca", alpacas_path, class: "btn btn-warning mt-2 btn-block" %>
-       </div>
-      <div class="card-body">
-        <p class="dash-board-p">Your listed Alpaca(s):</p>
+      <div id="container-book">
+        <%= link_to "Book another Alpaca", alpacas_path, class: "btn btn-primary mt-2" %>
       </div>
+
+      <div class="card-body">
+        <h2><strong>Your listed Alpaca(s)</strong></h2>
+      </div>
+
       <% @alpacas.each do |alpaca| %>
-      <div class="card-body d-flex justify-content-between" id="inner-card">
+      <div class="card-body d-flex" id="inner-card">
         <div class="alpaca-image">
-        <% if alpaca.photo.present? %>
-          <%= cl_image_tag(alpaca.photo, class:"img-thumbnail rounded") %>
-        <% end %>
+          <% if alpaca.photo.present? %>
+            <%= cl_image_tag(alpaca.photo, class:"img-thumbnail rounded") %>
+          <% end %>
         </div>
+
         <div id="left-align">
-          <p id="alpaca-name-2"> <%= alpaca.name.upcase %></p>
-          <p> <strong>Rental dates:</strong><br> 12.10.19 – 14.10.19 </p>
-          <p> <strong>Your address:</strong><br> <%= alpaca.address %> </p>
+          <p id="alpaca-name"> <%= alpaca.name.upcase %></p>
+          <p> <strong>Your address:</strong> <%= alpaca.address %> </p>
+          <div class="d-flex justify-content-start mt-5">
+            <p id="s" class="mr-3"><%= link_to "See more", alpaca_path(alpaca) %></p>
+            <p id="s" class="mr-3"><%= link_to "Edit", edit_alpaca_path(alpaca) %></p>
+            <p id="s"><%= link_to "Delete listing", alpaca_path(alpaca), method: :delete %></p>
+          </div>
         </div>
         <div>
-          <p> <strong id="s"><%= link_to "Edit", edit_alpaca_path(alpaca)  %></strong></p>
-          <p id="requested-status"> REQUESTED </p>
+          <p id="listed-status"> LISTED </p>
         </div>
       </div>
+
+
       <% end %>
+      <div id="container-book">
+        <%= link_to "List Alpaca", new_alpaca_path, class: "btn btn-primary mt-2 mb-4" %>
+      </div>
+
+
+  </div>
 </div>

@@ -46,7 +46,7 @@ class AlpacasController < ApplicationController
     @alpaca.user = current_user
     authorize @alpaca
     if @alpaca.save
-      redirect_to alpaca_path(@alpaca)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -68,7 +68,7 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.find(params[:id])
     authorize @alpaca
     @alpaca.destroy
-    redirect_to alpacas_path
+    redirect_to dashboard_path
   end
 
   private
