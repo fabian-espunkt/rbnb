@@ -68,7 +68,7 @@ alpaca2 = Alpaca.new(
       craziness_level: 2,
       price: 250,
       user: User.second,
-      description: "Barks at cats and slightly arrogant attitude towards other alpacas. Solo walk recommended."
+      description: "Barks at cats and slightly arrogant attitude towards other alpacas."
       }
     )
 alpaca2.remote_photo_url = url2
@@ -95,7 +95,7 @@ alpaca4 = Alpaca.new(
    {
       name: "Steven",
       age: 14,
-      address: "Am Karlsbad 10, 10785 Berlin",
+      address: "Chausseestraße 41, 10115 Berlin",
       color: "black",
       craziness_level: 2,
       price: 180,
@@ -105,6 +105,22 @@ alpaca4 = Alpaca.new(
     )
 alpaca4.remote_photo_url = url4
 alpaca4.save!
+
+url5 = "https://static.theworks.co.uk/images/5052089242234_Z.jpg"
+alpaca5 = Alpaca.new(
+   {
+      name: "Dimitri",
+      age: 14,
+      address: "Neumarkter Str. 28, 81673 München",
+      color: "glitter",
+      craziness_level: 3,
+      price: 300,
+      user: User.fourth,
+      description: "Loves to be covered in baby oil while twerking and singing a random song."
+      }
+    )
+alpaca5.remote_photo_url = url5
+alpaca5.save!
 
 puts "Success! Created #{Alpaca.count} alpacas"
 puts "Finished! Enjoy testing your seeded database."
