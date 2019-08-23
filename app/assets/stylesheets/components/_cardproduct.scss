@@ -8,37 +8,45 @@
 
 .alpaca-card {
   background-color: white;
-  height: 182px;
-  width: 550px;
+  height: 210px;
+  width: 600px;
   margin-bottom: 20px;
+  justify-content: space-between;
   img {
     width: 150px;
     height: 150px;
     border-radius: 4px;
     object-fit: cover;
   }
-
 }
 
 .alpaca-amount {
   padding: 20px 0;
+  align-items: flex-start;
 }
 
-
 .text-left {
-  line-height: 10px;
-  a {
+  line-height: 17px;
+  align-items: flex-start;
   color: black;
-  text-decoration: none;
-  }
+  width: 320px;
   p {
-  color: grey;
+  color: black;
   }
   span {
-  color: grey;
+  color: black;
   align-items: flex-end;
   }
-  h5 {
-    color: grey;
+  .orange {
+    color: #F8772B !important;
+  }
+}
+
+.pricetag {
+  padding-top: 152px;
+  padding-left: 60px;
+  align-items: flex-end;
+  a {
+    color: #F8772B !important;
   }
 }

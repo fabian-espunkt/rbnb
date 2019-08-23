@@ -47,7 +47,7 @@ alpaca1 = Alpaca.new(
    {
       name: "Holger",
       age: 25,
-      address: "Springlane 24, 10722 Berlin",
+      address: "Graefestraße 47-50, 10967 Berlin",
       color: "beige",
       craziness_level: 1,
       price: 299,
@@ -55,7 +55,7 @@ alpaca1 = Alpaca.new(
       description: "A beautiful creature with a strong urge to pee when touched. Calm behaviour, strong passion."
       }
     )
-alpaca1.photo = url1
+alpaca1.remote_photo_url = url1
 alpaca1.save!
 
 url2 = "https://www.thatsfarming.com/uploads/news/resizeExact_1200_800/3408-alpaca-1191300-1280.jpg"
@@ -63,7 +63,7 @@ alpaca2 = Alpaca.new(
    {
       name: "Peter",
       age: 18,
-      address: "Tempelhofer Feld 22, 10785 Berlin",
+      address: "Pariser Platz, 10117 Berlin",
       color: "white",
       craziness_level: 2,
       price: 250,
@@ -111,7 +111,7 @@ alpaca5 = Alpaca.new(
    {
       name: "Dimitri",
       age: 14,
-      address: "Neumarkter Str. 28, München",
+      address: "Speyerer Str. 23-17, 60327 Frankfurt am Main",
       color: "glitter",
       craziness_level: 3,
       price: 300,
@@ -127,7 +127,7 @@ alpaca6 = Alpaca.new(
    {
       name: "Andy",
       age: 20,
-      address: "78 Chester Road, SALISBURY, SP65 3NY",
+      address: "Malta House, 36-38 Piccadilly, Mayfair, London W1J 0DP",
       color: "glitter",
       craziness_level: 10,
       price: 5,
@@ -143,7 +143,7 @@ alpaca7 = Alpaca.new(
    {
       name: "Sarah",
       age: 20,
-      address: "Via Nolana 45, Carrodano",
+      address: "Via Santa Maria Ausiliatrice, 41, 00181 Roma",
       color: "brown",
       craziness_level: 5,
       price: 40,
