@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     authorize @alpaca
     @booking.user = current_user
     @booking.alpaca = @alpaca
+    @booking.days = params[:booking][:days].to_i
     authorize @alpaca
     if @booking.save
       redirect_to dashboard_path
@@ -18,21 +19,4 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
-  def show
-  end
 end
-
-
-
-  # def create
-  #   @plant = Plant.find(params[:plant_id])
-  #   @tags = Tag.find(params[:plant_tag][:tag])
-  #   @tags.each do |tag|
-  #     @plant_tag = PlantTag.new
-  #     @plant_tag.plant = @plant
-  #     @plant_tag.tag = tag
-  #     @plant_tag.save
-  #   end
-  #   redirect_to garden_path(@plant.garden)
-  # end
