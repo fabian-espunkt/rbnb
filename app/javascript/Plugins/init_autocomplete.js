@@ -10,7 +10,7 @@ const initAutocomplete = () => {
       aroundLatLngViaIP: false,
     });
   }
-};
+}
 
 
 export { initAutocomplete };

@@ -31,7 +31,7 @@ class AlpacasController < ApplicationController
   def show
     @alpaca = Alpaca.find(params[:id])
     authorize @alpaca
-    @marker = @alpaca
+    @markers = [{ lat: @alpaca.latitude, lng: @alpaca.longitude }]
   end
 
   def new
