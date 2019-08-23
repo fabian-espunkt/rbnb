@@ -1,6 +1,6 @@
 <!-- Alpaca info with picture -->
 <div class="bg-white bg-cover border-top">
-  <div class="container col-8 p-3">
+  <div class="container p-3 d-flex justify-content-center">
     <div class="row">
       <div class="col-8 align-text-center">
         <br><h2><strong> <%= @alpaca.name %></strong></h2>
@@ -18,26 +18,26 @@
 
 <!-- Alpaca Overview, Location, Description -->
 
-<div class="container col-8 border-top" id="alignment">
+<div class="container mt-4" id="alignment">
   <div class="container">
     <div class="row">
       <div class="col-8">
         <!-- make a card -->
-        <div class="card p-3 mb-3 bg-grey">
-          <p class="text-left" id="overview"><strong>Overview</strong></p>
-          <p class="text-left"><small><strong>Address:</strong><br> <%= @alpaca.address %></small></p>
-          <p class="text-left"><small><strong>Age:</strong><br> <%= @alpaca.age %> years old</small></p>
-          <p class="text-left"><small><strong>Color:</strong> <br> <%= @alpaca.color.capitalize %></small></p>
-          <p class="text-left"><small><strong>Craziness level:</strong><br> <%= @alpaca.craziness_level %> | 1 = relaxed, 2 = normal, 3 = crazy</small></p>
+        <div id="overview-card" class="card p-3 mb-3 bg-grey">
+          <p class="" id="overview"><strong>Overview</strong></p>
+          <p class=""><strong>Address:</strong><br> <%= @alpaca.address %></p>
+          <p class=""><strong>Age:</strong><br> <%= @alpaca.age %> years old</p>
+          <p class=""><strong>Color:</strong> <br> <%= @alpaca.color.capitalize %></p>
+          <p class=""><strong>Craziness level:</strong><br> <%= @alpaca.craziness_level %> | 1 = relaxed, 2 = normal, 3 = crazy</p>
         </div>
         <!-- make a card -->
         <div class="card p-3 mb-3">
-          <p class="text-left"><strong>Description</strong></p>
-          <p class="text-left"><small><%= @alpaca.description %></small></p>
+          <p class=""><strong>Description</strong></p>
+          <p class=""><%= @alpaca.description %></p>
         </div>
       </div>
         <!-- Shopping cart -->
-        <div class="col-4">
+        <div class="col-4 mb-3">
           <div class="bg-white border p-3 sticky-top">
             <div class="d-flex justify-content-between mt-3 border-bottom">
                <p><strong id="orange-2">€ <span id="price-tag"><%= @alpaca.price %></span></strong> per day</p>
@@ -65,12 +65,12 @@
                   <p>€<span id="total-total"></span> </p>
                 </div>
                 <div class="form-actions" class="btn btn-primary">
-                  <%= f.submit "Book", class: "btn btn-warning mt-1 btn-block" %>
+                  <%= f.submit "Book", class: "btn btn-primary mt-1 btn-block" %>
                 </div>
               <% end %>
+              <p class="text-center pt-3"><i>* Rent price per day <br>includes VAT and all fees</i></p>
           </div>
             <div class="d-flex justify-content-between pt-3 border-top text-center">
-              <p class=""><i>* Rent price per day includes VAT and all fees</i></p>
             </div>
         </div>
     </div>
