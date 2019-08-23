@@ -19,4 +19,9 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @booking = Booking.find(params[:alpaca_id])
+    @booking.destroy
+  end
 end

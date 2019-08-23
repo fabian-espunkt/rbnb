@@ -21,19 +21,28 @@
 }
 
 #inner-card {
-  border: solid 0.2px #dad1d1;
+  border: solid 0.1px #dad1d1;
   margin: 0 42px 20px;
   margin-bottom: 20px;
-  box-shadow: 5px 7px 5px -5px #a09ea0;
+    p {
+      line-height: 1.2;
+    }
+    &:hover {
+      box-shadow: 2px 3px 11px 2px rgba(0,0,0,0.2);
+      border: none;
+    }
 }
 
-.alpaca-image img {
-  width: 172px;
-}
 
 #booking-status {
   color: #57d857;
   font-weight: bold;
+}
+
+#listed-status {
+  color: #57d857;
+  font-weight: bold;
+  margin-left: 102px;
 }
 
 #requested-status {
@@ -41,7 +50,7 @@
   font-weight: bold;
 }
 
-.dash-board-p {
+.dash-board h2 {
   font-size: 26px;
   margin-bottom: 10px;
 }
@@ -68,27 +77,35 @@
 
 #left-align {
   text-align: left;
+  margin-left: 28px;
+
 }
 
 #special-container {
   width: 800px;
-  margin-left: 317px;
+  margin-left: auto;
 }
 
 #cds {
-  box-shadow: 8px 8px 5px -5px rgba(158,150,158,1);
+  box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
   margin-bottom: 40px;
+  border-radius: 5px;
 }
 
 #s a {
-  color: orange;
-  padding: 3px;
-  margin-left: 20px;
+  color: #F8772B;
+  padding-right: 3px;
 }
 
 #container-book {
   width: 683px;
   margin: 20px auto;
   margin-top: 0;
+}
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    object-fit: cover;
 }

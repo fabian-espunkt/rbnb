@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :alpacas do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [] do
+  resources :bookings, only: [:destroy] do
     # resources :reviews, only: [:new, :create]
   end
 end
