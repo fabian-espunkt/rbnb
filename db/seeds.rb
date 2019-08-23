@@ -143,7 +143,7 @@ alpaca7 = Alpaca.new(
    {
       name: "Sarah",
       age: 20,
-      address: "Via Santa Maria Ausiliatrice, 41, 00181 Roma",
+      address: "Via Panisperna, 214, Rome, Italy",
       color: "brown",
       craziness_level: 5,
       price: 40,
@@ -159,7 +159,7 @@ alpaca8 = Alpaca.new(
    {
       name: "Leon",
       age: 20,
-      address: " 76 rue Lenotre, Rambouillet",
+      address: "45 Rue Descartes, 75005 Paris, Frankreich",
       color: "brown",
       craziness_level: 18,
       price: 98,
