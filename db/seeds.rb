@@ -68,7 +68,7 @@ alpaca2 = Alpaca.new(
       craziness_level: 2,
       price: 250,
       user: User.second,
-      description: "Barks at cats and slightly arrogant attitude towards other alpacas. Solo walk recommended."
+      description: "Barks at cats and slightly arrogant attitude towards other alpacas."
       }
     )
 alpaca2.remote_photo_url = url2
